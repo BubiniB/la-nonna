@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from booking.views import book_table
+from booking.views import view_reservations
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', book_table, name='book_table'),
-    path('',view_reservations, name='view_reservations')
+    path('view_reservations', view_reservations, name='view_reservations')
 ]
