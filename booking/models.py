@@ -40,4 +40,4 @@ class Reservation(models.Model):
 
 
     def __str__(self):
-        return f"{self.name} | email: {self.email} | party: {self.party} | date: {self.date} | time: {self.time}"
+        return self.name
