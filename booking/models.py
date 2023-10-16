@@ -28,16 +28,15 @@ TIME_SLOTS = (
 )
 
 
-# Customers
-class Customer(models.Model):
-    first_name = models.CharField(max_length=50, null=False, blank=False)
-    last_name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(db_index=True, unique=True, null=False, blank=False)
-    phone = PhoneNumberField(null=False, blank=False)
-
-
 # Reservation Details
 class Reservation(models.Model):
-    day = models.DateField(default=datetime.now)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(db_index=True, unique=True, null=False, blank=False)
+    phone = PhoneNumberField(null=False, blank=False)
     party = models.CharField(max_length=50, choices=PARTY_SIZE, default="2")
-    time = modelsCharField(max_length=10, choices=TIME_SLOTS, blank=False)
+    date = models.DateField(default=datetime.now)
+    time = models.CharField(max_length=10, choices=TIME_SLOTS, blank=False)
+
+
+    def __str__(self):
+        return self.name
