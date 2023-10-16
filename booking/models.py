@@ -31,7 +31,7 @@ TIME_SLOTS = (
 # Reservation Details
 class Reservation(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(db_index=True, unique=True, null=False, blank=False)
+    email = models.EmailField(max_length = 254, db_index=True, unique=True, null=False, blank=False)
     phone = PhoneNumberField(null=False, blank=False)
     party = models.CharField(max_length=50, choices=PARTY_SIZE, default="2")
     date = models.DateField(default=datetime.now)
@@ -39,4 +39,4 @@ class Reservation(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return f"{self.name} | email: {self.email} | party: {self.party} | date: {self.date} | time: {self.time}"
