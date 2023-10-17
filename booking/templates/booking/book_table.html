@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Book a table</h1>
-    <form method="POST" action="view_reservations">
+    <form method="POST" action="{% url 'book_table' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <div>

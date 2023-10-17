@@ -3,15 +3,20 @@ from django.shortcuts import render, redirect
 from .models import Reservation
 from .forms import BookTableForm
 
+
 # Create your views here.
 def book_table(request):
+    form = BookTableForm()
+
     if request.method == 'POST':
         form = BookTableForm(request.POST)
 
         if form.is_valid():
             form.save()
-            return redirect('view_reservations')
-    form = BookTableForm() 
+
+        return redirect('view_reservations')
+            
+    
     context = {
         'form': form
     }

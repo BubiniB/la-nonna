@@ -1,6 +1,5 @@
 from django.db import models
 from django.forms import ModelForm
-from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime
 
 # Choices for party size
@@ -33,8 +32,8 @@ TIME_SLOTS = (
 class Reservation(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length = 254, db_index=True, unique=True, null=False, blank=False)
-    phone = PhoneNumberField(null=False, blank=False)
-    party = models.CharField(max_length=50, choices=PARTY_SIZE, default="2")
+    phone = models.IntegerField(null=False, blank=False)
+    number_of_persons = models.CharField(max_length=50, choices=PARTY_SIZE, default="2")
     date = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIME_SLOTS, blank=False)
 

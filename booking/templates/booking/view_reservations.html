@@ -8,7 +8,16 @@
 <body>
     <h1>View Reservations</h1>
 
-    {{ view_reservations }}
-    
+    <ul>
+        {% for r in reservation %}
+            <li>Name: {{ r.name }}</li>
+            <li>Email: {{ r.email }}</li>
+            <li>Phone: {{ r.phone }}</li>
+            <li>Number of Persons: {{ r.number_of_persons }}</li>
+            <li>Date: {{ r.date }}</li>
+            <li>Time: {{ r.time }}</li>
+            <hr>
+        {% endfor %}
+    </ul>
 </body>
 </html>
