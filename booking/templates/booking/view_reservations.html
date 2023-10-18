@@ -24,10 +24,7 @@
             <p>Number of Persons: {{ reservation.number_of_persons }}</p>
             <p>Date: {{ reservation.date }}</p>
             <p>Time: {{ reservation.time }}</p>
-            <form method="POST" action="{% url 'view_reservations' %}">
-                {% csrf_token %}
-                <button type="submit" name="cancel_reservation">Cancel Reservation</button>
-            </form>
+            <p>If you have any further questions or want to cancel your reservation, please contact us 'here(ahref)' or send an email to info@lanonna.com</p>
     {% endif %}
 
     {% if request.method == 'POST' and not reservation %}
@@ -36,7 +33,7 @@
         {% else %}
             <p>We cannot find any reservation linked to that email address. Please make sure you use the correct email address and/or check for spelling errors.</p>
         {% endif %}
-        <p>If you have any further questions, please contact us on info@lanonna.com</p>
+        <p>If you have any further questions, please contact us 'here(ahref)' or send an email to info@lanonna.com</p>
     {% endif %}
 </body>
 </html>

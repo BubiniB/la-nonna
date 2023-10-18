@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+from datetime import datetime
 
 from .models import Reservation
 from .forms import BookTableForm, ViewReservationForm
 
 
-# Create your views here.
+# Table reservation
 def book_table(request):
     form = BookTableForm()
 
@@ -23,6 +24,7 @@ def book_table(request):
     return render(request, 'booking/book_table.html', context)
 
 
+# Viewing table reservation
 def view_reservations(request):
     reservation = None
 
@@ -35,14 +37,9 @@ def view_reservations(request):
     else:
         view_form = ViewReservationForm(request.POST)
 
-
     context = {
         'view_form': view_form,
         'reservation': reservation,
     }
-    if reservation:
-        if request.method == 'POST' and 'cancel_reservation' in request.POST:
-            reservation.delete()
-            return redirect('view_reservations')
 
     return render(request, 'booking/view_reservations.html', context)
