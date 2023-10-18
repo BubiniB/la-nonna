@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .models import Reservation
-from .forms import BookTableForm
+from .forms import BookTableForm, ViewReservationForm
 
 
 # Create your views here.
@@ -24,8 +24,25 @@ def book_table(request):
 
 
 def view_reservations(request):
-    reservation = Reservation.objects.all()
+    reservation = None
+
+    if request.method == 'POST':
+        view_form = ViewReservationForm(request.POST)
+
+        if view_form.is_valid():
+            email = view_form.cleaned_data['email']
+            reservation = Reservation.objects.filter(email=email).first()
+    else:
+        view_form = ViewReservationForm(request.POST)
+
+
     context = {
-        'reservation': reservation
+        'view_form': view_form,
+        'reservation': reservation,
     }
+    if reservation:
+        if request.method == 'POST' and 'cancel_reservation' in request.POST:
+            reservation.delete()
+            return redirect('view_reservations')
+
     return render(request, 'booking/view_reservations.html', context)

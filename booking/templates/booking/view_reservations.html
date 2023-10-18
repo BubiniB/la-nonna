@@ -8,16 +8,35 @@
 <body>
     <h1>View Reservations</h1>
 
-    <ul>
-        {% for r in reservation %}
-            <li>Name: {{ r.name }}</li>
-            <li>Email: {{ r.email }}</li>
-            <li>Phone: {{ r.phone }}</li>
-            <li>Number of Persons: {{ r.number_of_persons }}</li>
-            <li>Date: {{ r.date }}</li>
-            <li>Time: {{ r.time }}</li>
-            <hr>
-        {% endfor %}
-    </ul>
+    <form method="POST" action="{% url 'view_reservations' %}">
+       {% csrf_token %}
+       {{ view_form.email }}
+       <div>
+            <button type="submit">View Reservation</button>
+       </div>
+    </form>
+
+    {% if reservation %}
+        <h2>Reservation Details:</h2>
+            <p>Name: {{ reservation.name }}</p>
+            <p>Email: {{ reservation.email }}</p>
+            <p>Phone: {{ reservation.phone }}</p>
+            <p>Number of Persons: {{ reservation.number_of_persons }}</p>
+            <p>Date: {{ reservation.date }}</p>
+            <p>Time: {{ reservation.time }}</p>
+            <form method="POST" action="{% url 'view_reservations' %}">
+                {% csrf_token %}
+                <button type="submit" name="cancel_reservation">Cancel Reservation</button>
+            </form>
+    {% endif %}
+
+    {% if request.method == 'POST' and not reservation %}
+        {% if view_form.email.errors %}
+            <p>Email is required.</p>
+        {% else %}
+            <p>We cannot find any reservation linked to that email address. Please make sure you use the correct email address and/or check for spelling errors.</p>
+        {% endif %}
+        <p>If you have any further questions, please contact us on info@lanonna.com</p>
+    {% endif %}
 </body>
 </html>
