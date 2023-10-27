@@ -13,9 +13,19 @@ def book_table(request):
         form = BookTableForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            # Get the date and the time from the form
+            date = form.cleaned_data['date']
+            time = form.cleaned_data['time']
 
-        return redirect('view_reservations')
+            # Check if there is an existing reservation for the same date and time
+            existing_reservation = Reservation.objects.filter(date=date, time=time).first()
+
+            if existing_reservation:
+                return render(request, 'booking/booking_full.html')
+
+
+            form.save()
+            return redirect('view_reservations')
             
     
     context = {
