@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime
 
 from .models import Reservation
@@ -22,12 +22,10 @@ def book_table(request):
 
             if existing_reservation:
                 return render(request, 'booking/booking_full.html')
-
-
-            form.save()
-            return redirect('view_reservations')
             
-    
+            newest_reservation = form.save()
+            return redirect('reservation_success', pk=newest_reservation.pk)
+            
     context = {
         'form': form
     }
@@ -53,3 +51,9 @@ def view_reservations(request):
     }
 
     return render(request, 'booking/view_reservations.html', context)
+
+
+def reservation_success(request, pk):
+    newest_reservation = Reservation.objects.latest('pk')
+    print(newest_reservation)
+    return render(request, 'booking/reservation_success.html', {'newest_reservation': newest_reservation})
