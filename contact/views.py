@@ -12,6 +12,8 @@ def contact_us(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Thank you for reaching out! We have successfully received your message and will contact you as soon as possible.')
+            return redirect('contact_us')
 
     context = {
         'form': form
