@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 COURSE_CHOICES = (
     ('Antipasti', 'Antipasti'),
-    ('APrimo', 'APrimo'),
-    ('IlSecondo', 'IlSecondo'),
-    ('IlDolce', 'IlDolce'),
+    ('Primi Piatti', 'Primi Piatti'),
+    ('Secondi Piatti', 'Secondi Piatti'),
+    ('Dolci', 'Dolci'),
     ('Bevande', 'Bevande')
 )
 
