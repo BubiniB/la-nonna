@@ -26,7 +26,7 @@ urlpatterns = [
     path('book_table', book_table, name='book_table'),
     path('view_reservations', view_reservations, name='view_reservations'),
     path('reservation_success/<int:pk>', reservation_success, name='reservation_success'),
-    path('contact_us', contact_us, name='contact_us')
+    path('contact_us', contact_us, name='contact_us'),
     path('menu/', menu, name='menu'),
 ]
 

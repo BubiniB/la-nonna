@@ -7,6 +7,15 @@
 </head>
 <body>
     <h1>Menu</h1>
+    <ul>
+        {% for item in menu_items %}
+            {% if item.course == 'Antipasti %}
+                <li>{{ item.name }}</li>
+                <li>{{ item.description }}</li>
+                <li>{{ item.price }} €</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
     
     
 </body>
