@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from booking.views import book_table, view_reservations, reservation_success
 from contact.views import contact_us
 # from menu.views import menu
@@ -26,3 +28,7 @@ urlpatterns = [
     path('reservation_success/<int:pk>', reservation_success, name='reservation_success'),
     path('contact_us', contact_us, name='contact_us')
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
