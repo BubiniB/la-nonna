@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from booking.views import book_table, view_reservations, reservation_success
+from booking.views import book_table, view_reservations, reservation_success, home
 from contact.views import contact_us
 from menu.views import menu
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name='home'),
     path('book_table', book_table, name='book_table'),
     path('view_reservations', view_reservations, name='view_reservations'),
     path('reservation_success/<int:pk>', reservation_success, name='reservation_success'),

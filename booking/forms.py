@@ -7,6 +7,11 @@ class BookTableForm(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = '__all__'
+'''
+        widgets: {
+            'date': forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
+        }
+        '''
 
 
 # Form that is used for viewing reservations and cancel them

@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("gCUmyrfcmD23nGf59");
+    })();
+    </script> -->
+
     <title>Book a Table</title>
 </head>
 <body>
     <h1>Book a table</h1>
-    <form method="POST" action="{% url 'book_table' %}">
+    <form method="POST" action="{% url 'book_table' %}"  onsubmit="return sendMail(this);">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
@@ -17,4 +26,5 @@
         </div>
     </form>
 </body>
+<script src="la_nonna/static/js/sendEmail.js"></script>
 </html>

@@ -4,6 +4,9 @@ from datetime import datetime
 from .models import Reservation
 from .forms import BookTableForm, ViewReservationForm
 
+# Home
+def home(request):
+    return render(request, 'index.html',{})
 
 # Table reservation
 def book_table(request):
