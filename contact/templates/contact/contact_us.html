@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Contact us</title>
-</head>
-<body>
-    <h1>Contact us</h1>
-    <form method="POST" action="{% url 'contact_us' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </div>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Contact Us {% endblock %}
+    {% block content %}
+        <h1>Contact us</h1>
+        <form method="POST" action="{% url 'contact_us' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </div>
+        </form>
+    {% endblock %}

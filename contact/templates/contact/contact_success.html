@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you!</title>
-</head>
-<body>
-    <h1>Your message was sent</h1>
-    <h2>Thank you for reaching out! We have successfully received your message and will contact you as soon as possible.</h2>
+{% extends 'base.html' %}
 
-    <h3>Go back to <a href="{% url 'contact_us' %}" >Contact</a></h3>
-    
-</body>
-</html>
+{% block title %} Message sent {% endblock %}
+    {% block content %}
+        <h1>Your message was sent</h1>
+        <h2>Thank you for reaching out! We have successfully received your message and will contact you as soon as possible.</h2>
+
+        <h3>Go back to <a href="{% url 'contact_us' %}" >Contact</a></h3>
+    {% endblock %}

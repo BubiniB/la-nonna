@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you</title>
-</head>
-<body>
-    {% if newest_reservation %}
-        <h2>Thank you! Your reservation is confirmed!</h2>
-            <h3>Reservation Details:</h3>
-                <p>Name: {{ newest_reservation.name }}</p>
-                <p>Email: {{ newest_reservation.email }}</p>
-                <p>Phone: {{ newest_reservation.phone }}</p>
-                <p>Number of Persons: {{ newest_reservation.number_of_persons }}</p>
-                <p>Date: {{ newest_reservation.date }}</p>
-                <p>Time: {{ newest_reservation.time }}</p>
-                <p>We are looking forward to have you as our guest!</p>
-                <p>If you have any further questions or want to cancel your reservation, please contact us 'here(ahref)' or send an email to info@lanonna.com</p>
-    {% endif %}
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Thank you! {% endblock %}
+    {% block content %}
+        {% if newest_reservation %}
+            <h2>Thank you! Your reservation is confirmed!</h2>
+                <h3>Reservation Details:</h3>
+                    <p>Name: {{ newest_reservation.name }}</p>
+                    <p>Email: {{ newest_reservation.email }}</p>
+                    <p>Phone: {{ newest_reservation.phone }}</p>
+                    <p>Number of Persons: {{ newest_reservation.number_of_persons }}</p>
+                    <p>Date: {{ newest_reservation.date }}</p>
+                    <p>Time: {{ newest_reservation.time }}</p>
+                    <p>We are looking forward to have you as our guest!</p>
+                    <p>If you have any further questions or want to cancel your reservation, please contact us 'here(ahref)' or send an email to info@lanonna.com</p>
+        {% endif %}
+    {% endblock %}

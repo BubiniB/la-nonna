@@ -1,69 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-</head>
-<body>
-    <h1>Menu</h1>
+{% extends 'base.html' %}
 
-    <h2>Antipasti</h2>
-    <ul>
-        {% for item in menu_items %}
-            {% if item.course == 'Antipasti' %}
-                <li>{{ item.name }} <br>
-                    {{ item.description }} <br>
-                    {{ item.price }} €
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-    <h2>Primi Piatti</h2>
-    <ul>
-        {% for item in menu_items %}
-            {% if item.course == 'Primi Piatti' %}
-                <li>{{ item.name }} <br>
-                    {{ item.description }} <br>
-                    {{ item.price }} €
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-    <h2>Secondi Piatti</h2>
-    <ul>
-        {% for item in menu_items %}
-            {% if item.course == 'Secondi Piatti' %}
-                <li>{{ item.name }} <br>
-                    {{ item.description }} <br>
-                    {{ item.price }} €
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-    <h2>Dolci</h2>
-    <ul>
-        {% for item in menu_items %}
-            {% if item.course == 'Dolci' %}
-                <li>{{ item.name }} <br>
-                    {{ item.description }} <br>
-                    {{ item.price }} €
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-    <h2>Bevande</h2>
-    <ul>
-        {% for item in menu_items %}
-            {% if item.course == 'Bevande' %}
-                <li>{{ item.name }} <br>
-                    {{ item.description }} <br>
-                    {{ item.price }} €
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-    
-    
-</body>
-</html>
+{% block title %} Menu {% endblock %}
+    {% block content %}
+        <h1>Menu</h1>
+
+        <h2>Antipasti</h2>
+        <ul>
+            {% for item in menu_items %}
+                {% if item.course == 'Antipasti' %}
+                    <li>{{ item.name }} <br>
+                        {{ item.description }} <br>
+                        {{ item.price }} €
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h2>Primi Piatti</h2>
+        <ul>
+            {% for item in menu_items %}
+                {% if item.course == 'Primi Piatti' %}
+                    <li>{{ item.name }} <br>
+                        {{ item.description }} <br>
+                        {{ item.price }} €
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h2>Secondi Piatti</h2>
+        <ul>
+            {% for item in menu_items %}
+                {% if item.course == 'Secondi Piatti' %}
+                    <li>{{ item.name }} <br>
+                        {{ item.description }} <br>
+                        {{ item.price }} €
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h2>Dolci</h2>
+        <ul>
+            {% for item in menu_items %}
+                {% if item.course == 'Dolci' %}
+                    <li>{{ item.name }} <br>
+                        {{ item.description }} <br>
+                        {{ item.price }} €
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h2>Bevande</h2>
+        <ul>
+            {% for item in menu_items %}
+                {% if item.course == 'Bevande' %}
+                    <li>{{ item.name }} <br>
+                        {{ item.description }} <br>
+                        {{ item.price }} €
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endblock %}
