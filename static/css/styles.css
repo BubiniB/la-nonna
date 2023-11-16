@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Quando&family=Roboto+Slab&family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap');
+
+.navbar{
+    background-color: #fff;
+}
+
+.brand {
+    color: #B4000F;
+    font-family: Quando, sans-serif;
+}
+
+.nav-link {
+    color: #597718;
+    font-family: Quando, sans-serif;
+}
