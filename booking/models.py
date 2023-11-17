@@ -1,6 +1,7 @@
 from django.db import models
 from django.forms import ModelForm
 from datetime import datetime
+from cloudinary.models import CloudinaryField
 
 # Choices for party size
 PARTY_SIZE = (
@@ -40,3 +41,7 @@ class Reservation(models.Model):
 
     def __str__(self):
         return self.name
+
+class Pictures(models.Model):
+    title = models.CharField(max_length=100)
+    image = CloudinaryField('image')

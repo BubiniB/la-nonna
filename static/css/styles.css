@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quando&family=Roboto+Slab&family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap');
 
+/* Navigation */
 .navbar{
     background-color: #fff;
 }
@@ -12,4 +13,18 @@
 .nav-link {
     color: #597718;
     font-family: Quando, sans-serif;
+}
+
+/* Hero image */
+.hero-outer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image {
+    height: 300px;
+    width: auto;
+    background-repeat: no-repeat center center;
 }

@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'booking',
     'contact',
     'menu',
@@ -71,6 +76,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'la_nonna.wsgi.application'
+
+# Cloudinary config
+cloudinary.config(
+    cloud_name = "dmis4h4nh",
+    api_key = "298895367961789",
+    api_secret = "DgJEoDF5irkJhjz6qWpAy-zZnWA",
+)
 
 
 # Database

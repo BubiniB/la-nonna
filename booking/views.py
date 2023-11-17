@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
 
-from .models import Reservation
+from .models import Reservation, Pictures
 from .forms import BookTableForm, ViewReservationForm
 
 # Home
 def home(request):
-    return render(request, 'index.html',{})
+    picture = Pictures.objects.all()
+    img = {'picture': picture}
+    return render(request, 'index.html', img)
 
 # Table reservation
 def book_table(request):
