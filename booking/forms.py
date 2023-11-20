@@ -24,3 +24,7 @@ class BookTableForm(forms.ModelForm):
 # Form that is used for viewing reservations and cancel them
 class ViewReservationForm(forms.Form):
     email = forms.EmailField(label='Email')
+
+    widgets = {
+        'email': forms.EmailInput(attrs={'class': 'form-control'}),
+    }
