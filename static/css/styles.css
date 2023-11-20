@@ -95,7 +95,7 @@ h3, h4 {
 }
 
 /* Content menu.html */
-.bg-menu, .bg-booking {
+.bg-page {
     background: url(https://res.cloudinary.com/dmis4h4nh/image/upload/v1700477247/fjua7ta9fonhbybwunhq.jpg);
 }
 
@@ -145,6 +145,12 @@ label {
 .button:hover {
     background-color: #40826D;
     color: #fff;
+}
+
+/* Content view-reservation.html*/
+.label {
+    font-family: Quando, sans-serif;
+    font-weight: bold;
 }
 
 
