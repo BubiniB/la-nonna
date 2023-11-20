@@ -23,6 +23,7 @@ h3, h4 {
 /* Navigation */
 .navbar{
     background: url(https://res.cloudinary.com/dmis4h4nh/image/upload/v1700468226/kj0pzzzleyqugqxjwmxc.jpg);
+    background-color: black;
     width: 100%;
 }
 
@@ -91,6 +92,34 @@ h3, h4 {
 
 .link:hover {
     color: #f4bb5f !important;
+}
+
+/* Content menu.html */
+.bg-menu {
+    background: url(https://res.cloudinary.com/dmis4h4nh/image/upload/v1700477247/fjua7ta9fonhbybwunhq.jpg);
+}
+
+.menu {
+    background-color: rgb(255, 255, 255, 0.38);
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu-name {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.menu-description {
+    font-style: italic;
+}
+
+.menu-price {
+    font-weight: bold;
 }
 
 
