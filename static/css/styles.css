@@ -166,6 +166,7 @@ label {
 
 .about, .footer-link, .footer-contact {
     border-radius: 25px;
+    height: fit-content;
 }
 
 

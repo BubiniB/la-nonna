@@ -4,7 +4,7 @@
     {% block content %}
         <div class="container-fluid bg-page">
             <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 col-10 my-3 p-4 contact-form">
+                <div class="col-lg-6 col-md-8 col-10 my-3 p-4">
                     <h1 class="red">Book a table</h1>
                     <form method="POST" action="{% url 'book_table' %}"  onsubmit="return sendMail(this);">
                         {% csrf_token %}
