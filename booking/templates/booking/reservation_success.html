@@ -3,15 +3,21 @@
 {% block title %} Thank you! {% endblock %}
     {% block content %}
         {% if newest_reservation %}
-            <h2>Thank you! Your reservation is confirmed!</h2>
-                <h3>Reservation Details:</h3>
-                    <p>Name: {{ newest_reservation.name }}</p>
-                    <p>Email: {{ newest_reservation.email }}</p>
-                    <p>Phone: {{ newest_reservation.phone }}</p>
-                    <p>Number of Persons: {{ newest_reservation.number_of_persons }}</p>
-                    <p>Date: {{ newest_reservation.date }}</p>
-                    <p>Time: {{ newest_reservation.time }}</p>
-                    <p>We are looking forward to have you as our guest!</p>
-                    <p>If you have any further questions or want to cancel your reservation, please contact us 'here(ahref)' or send an email to info@lanonna.com</p>
+        <div class="container-fluid bg-page">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-10 my-3 p-4 view-form">
+                    <h2>Thank you! Your reservation is confirmed!</h2>
+                    <h3 class="red">Reservation Details:</h3>
+                    <p class="label">Name: {{ newest_reservation.name }}</p>
+                    <p class="label">Email: {{ newest_reservation.email }}</p>
+                    <p class="label">Phone: {{ newest_reservation.phone }}</p>
+                    <p class="label">Number of Persons: {{ newest_reservation.number_of_persons }}</p>
+                    <p class="label">Date: {{ newest_reservation.date }}</p>
+                    <p class="label">Time: {{ newest_reservation.time }}</p>
+                    <p class="label">We are looking forward to have you as our guest!</p>
+                    <h3><em>If you have any further questions or want to cancel your reservation, please contact us <a class="red link" href="{% url 'contact_us' %}" >here</a> or give us <a class="red link" href="#contact">a call</a></em></h3>
+                </div>
+            </div>
+        </div>
         {% endif %}
     {% endblock %}
