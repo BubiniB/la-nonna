@@ -52,28 +52,33 @@ h3, h4 {
     color: #FCF55F;
 }
 
+.navbar-toggler {
+    border: solid 3px;
+}
+
 /* Images */
 .hero-image {
     width: 100%;
 }
 
 .dinner {
-    border-radius: 100px;
+    border-radius: 80px;
+    width: auto;
+    max-height: 380px;
 }
 
 /* Content index.html */
 .cta {
     width: 100%;
     height: 130px;
-    background-color: #FFAA33;
+    background-color: #b05f03;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 80px;
 }
 
 .cta-link {
-    color: black;
+    color: #fff;
     font-family: Quando, sans-serif;
     font-size: 200%;
     font-weight: bold;
@@ -81,11 +86,11 @@ h3, h4 {
 }
 
 .cta:hover {
-    background-color: #b3dfec;
+    background-color: #40826D;
 }
 
-.contact-link:hover {
-    color: #f4bb5f;
+.link:hover {
+    color: #f4bb5f !important;
 }
 
 
