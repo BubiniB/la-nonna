@@ -2,14 +2,46 @@
 
 {% block title %} Book a Table {% endblock %}
     {% block content %}
-        <h1>Book a table</h1>
-        <form method="POST" action="{% url 'book_table' %}"  onsubmit="return sendMail(this);">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div>
-                <p>
-                    <button type="submit">Book table</button>
-                </p>
+        <div class="container-fluid bg-booking">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-10 my-3 p-4 contact-form">
+                    <h1 class="red">Book a table</h1>
+                    <form method="POST" action="{% url 'book_table' %}"  onsubmit="return sendMail(this);">
+                        {% csrf_token %}
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+    
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+
+                        {{ form.phone.label_tag }}
+                        {{ form.phone }}
+
+                        {{ form.number_of_persons.label_tag }}
+                        {{ form.number_of_persons }}
+
+                        {{ form.date.label_tag }}
+                        {{ form.date }}
+
+                        {{ form.time.label_tag }}
+                        {{ form.time }}
+                        <br>
+                        <div>
+                            <button class="btn btn-lg button" type="submit">Book table</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-8 col-10 d-flex align-items-center my-3 p-4">
+                    <h3 class="text-center text-md-left">
+                        Please bear in mind that we have <b>limited seating</b> in order to keep an intimate atmosphere. This means that we only have <b>one table available per date and time.</b>
+                        <br>
+                        <br>
+                        For parties <b>exceeding 6 persons</b> please <a class="red link" href="{% url 'contact_us' %}">reach out to us here</a> or give us <a class="red link" href="#contact">a call</a> and we will gladly arrange it for you.
+                    </h3>
+                </div>
+                <div class="col-10 mb-3 pb-2 text-center">
+                    <img class="img-fluid food" src="https://res.cloudinary.com/dmis4h4nh/image/upload/v1700483554/jnkiywfst8fmduir1ae5.jpg" alt="food">
+                </div>
             </div>
-        </form>
+        </div>
     {% endblock %}

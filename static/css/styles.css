@@ -95,7 +95,7 @@ h3, h4 {
 }
 
 /* Content menu.html */
-.bg-menu {
+.bg-menu, .bg-booking {
     background: url(https://res.cloudinary.com/dmis4h4nh/image/upload/v1700477247/fjua7ta9fonhbybwunhq.jpg);
 }
 
@@ -122,6 +122,31 @@ ul {
     font-weight: bold;
 }
 
+/* Content book_table.html*/
+.food {
+    border-radius: 190px;
+}
+
+.form-control {
+    width: 80%;
+}
+
+label {
+    font-family: Quando, sans-serif;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #b05f03;
+    border-radius: 25px;
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #40826D;
+    color: #fff;
+}
+
 
 /* Footer */
 .footer {
@@ -135,4 +160,12 @@ ul {
 
 .about, .footer-link, .footer-contact {
     border-radius: 25px;
+}
+
+
+/* Media Queries */
+@media (max-width: 820px) {
+    .form-control {
+        width: 100%;
+    }
 }

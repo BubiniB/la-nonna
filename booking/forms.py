@@ -12,7 +12,6 @@ class BookTableForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
             'phone': forms.NumberInput(attrs={'class': 'form-control'}),
-            'subject': forms.Textarea(attrs={'class': 'form-control'}),
             'number_of_persons': forms.Select(attrs={'class': 'form-control'}),
             'date': forms.DateInput(attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd (DOB)', 'class': 'form-control'}),
             'time': forms.Select(attrs={'class': 'form-control'}),
