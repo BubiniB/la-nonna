@@ -10,10 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-bubinib-lanonna-dj739zt60bf.ws-eu105.gitpod.io', '8000-bubinib-lanonna-dj739zt60bf.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-bubinib-lanonna-dj739zt60bf.ws-eu105.gitpod.io', '8000-bubinib-lanonna-dj739zt60bf.ws-eu106.gitpod.io', 'localhost', '127.0.0.1' ]
 
 
 # Application definition
@@ -80,8 +84,8 @@ WSGI_APPLICATION = 'la_nonna.wsgi.application'
 # Cloudinary config
 cloudinary.config(
     cloud_name = "dmis4h4nh",
-    api_key = "298895367961789",
-    api_secret = "DgJEoDF5irkJhjz6qWpAy-zZnWA",
+    api_key = os.environ.get('CLOUDINARY_API_KEY', ''),
+    api_secret = os.environ.get('CLOUDINARY_API_SECRET', ''),
 )
 
 
@@ -94,6 +98,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES = {
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
 
 
 # Password validation
