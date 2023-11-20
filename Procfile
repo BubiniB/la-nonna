@@ -1,1 +1,1 @@
-web: gunicorn la-nonna.wsgi
+web: gunicorn la_nonna.wsgi
