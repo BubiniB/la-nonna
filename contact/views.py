@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Contact
 from .forms import ContactForm
 
+
 # Create your views here.
 def contact_us(request):
     form = ContactForm()
@@ -20,4 +21,4 @@ def contact_us(request):
     }
 
     return render(request, 'contact/contact_us.html', context)
-
+    

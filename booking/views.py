@@ -4,11 +4,13 @@ from datetime import datetime
 from .models import Reservation, Pictures
 from .forms import BookTableForm, ViewReservationForm
 
+
 # Home
 def home(request):
     picture = Pictures.objects.all()
     img = {'picture': picture}
     return render(request, 'index.html', img)
+
 
 # Table reservation
 def book_table(request):
@@ -27,10 +29,10 @@ def book_table(request):
 
             if existing_reservation:
                 return render(request, 'booking/booking_full.html')
-            
+
             newest_reservation = form.save()
             return redirect('reservation_success', pk=newest_reservation.pk)
-            
+                   
     context = {
         'form': form
     }
